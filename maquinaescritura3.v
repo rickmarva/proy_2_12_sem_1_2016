@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
-// Engineer: 
+// Engineer: Ricardo Mart铆nez Vallejos
 // 
 // Create Date:    09:53:46 04/26/2016 
 // Design Name: 
@@ -58,7 +58,7 @@ module maquinaescritura3(clk_i,enable,reset,programo,numero,cambio,direccion,AD_
    parameter dd = 4'b0011;//hora
    parameter ee = 4'b0100;//fecha
    parameter ff = 4'b0101;//mes
-   parameter gg = 4'b0110;//a駉
+   parameter gg = 4'b0110;//a帽o
    parameter hh = 4'b0111;//Thora
 	parameter ii = 4'b1000;//Tmin
 	parameter jj = 4'b1001;//Tseg
@@ -93,7 +93,7 @@ else if(programo)
 					a : begin// programo en status 2 el bit de inicializacion en 1
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h02;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h02;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'h10;// envio la instruccion en hexadecimal de 10
 							RD=1'b1;
 							WR=1'b0;
@@ -135,7 +135,7 @@ else if(programo)
 					b : begin// programo en status el bit de inicializacion en 0
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h02;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h02;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'h00;// envio la instruccion en hexadecimal de 10
 							RD=1'b1;
 							WR=1'b0;
@@ -179,7 +179,7 @@ else if(programo)
 					c : begin//Digital trimming
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h10;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h10;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'hD2;// envio la instruccion en hexadecimal de 10*********************************************************cambie 2D por D2
 							RD=1'b1;
 							WR=1'b0;
@@ -223,7 +223,7 @@ else if(programo)
 					d : begin//status 0 frecuency tunning
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h00;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h00;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor=8'b00001010;// envio las instrucciones para un reloj de 24 horas, esta desactivado el set time lock
 							RD=1'b1;
 							WR=1'b0;
@@ -262,7 +262,7 @@ else if(programo)
 									dd: state=g;//hora
 									ee: state=h;//fecha
 									ff: state=i;//mes
-									gg: state=j;//a駉
+									gg: state=j;//a帽o
 									ii: state=k;//Thora
 									//ii: state=l;//Tmin
 									//jj: state=m;//Tseg
@@ -276,7 +276,7 @@ else if(programo)
 					e : begin//seg
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h21;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h21;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -320,7 +320,7 @@ else if(programo)
 					f : begin//min
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h22;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h22;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -363,7 +363,7 @@ else if(programo)
 					g : begin//horas
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h23;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h23;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -406,7 +406,7 @@ else if(programo)
 					h : begin//fecha
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h24;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h24;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -449,7 +449,7 @@ else if(programo)
 					i : begin//mes
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h25;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h25;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -490,10 +490,10 @@ else if(programo)
 					end
 					
 					
-					j : begin//a駉
+					j : begin//a帽o
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h26;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h26;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -536,7 +536,7 @@ else if(programo)
 					k : begin//Thoraas
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h43;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h43;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'h23;// envio la instruccion en hexadecimal de 10
 							RD=1'b1;
 							WR=1'b0;
@@ -578,7 +578,7 @@ else if(programo)
 					l : begin//Tmin
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h42;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h42;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = numero;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -621,7 +621,7 @@ else if(programo)
 					m : begin//Tseg
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h41;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h41;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'h59;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -664,7 +664,7 @@ else if(programo)
 					n : begin//comando F2
 						if(conta==5'b0000)
 							begin
-							direccion = 8'hF2;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'hF2;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'hF2;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -707,7 +707,7 @@ else if(programo)
 					o : begin//status 1
 						if(conta==5'b0000)
 							begin
-							direccion = 8'h01;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'h01;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'h00;// envio la instruccion en hexadecimal de 10
 							
 							RD=1'b1;
@@ -751,7 +751,7 @@ else if(programo)
 					p : begin///F1
 						if(conta==5'b0000)
 							begin
-							direccion = 8'hF1;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'hF1;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'hF1;// envio la instruccion en hexadecimal de 10
 							RD=1'b1;
 							WR=1'b0;
@@ -784,10 +784,10 @@ else if(programo)
 						else if(conta==5'b11011)
 							begin
 							conta=5'b11111;
-							direccion = 8'hzz;//indico la direccion a la cual voy a enviar la informaci髇
+							direccion = 8'hzz;//indico la direccion a la cual voy a enviar la informaci贸n
 							valor = 8'hzz;// envio la instruccion en hexadecimal de zz
 							fin=1'b1;
-							///state=q;--------------------------------------------------------t閞mino maquina de estados
+							///state=q;--------------------------------------------------------t茅rmino maquina de estados
 							end
 						else
 							state=p;		
